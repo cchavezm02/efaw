@@ -1,4 +1,4 @@
-export const environment={
-    production:false,
-    base:"https://llamapay-arquiweb-2-spuo.onrender.com"
-}
+export const environment = {
+    production: false,
+    base: "http://localhost:8080" // URL para desarrollo local
+};

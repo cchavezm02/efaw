@@ -1,0 +1,15 @@
+node_modules
+.angular
+dist
+.git
+*.log
+.env
+.env.local
+.env.*.local
+coverage
+.nyc_output
+.tmp
+.sass-cache
+.cache
+.DS_Store
+Thumbs.db

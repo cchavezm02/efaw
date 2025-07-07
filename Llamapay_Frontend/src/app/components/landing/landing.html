@@ -69,6 +69,28 @@
       <p>"Esta aplicación me ha ayudado a entender mis patrones de gasto y encontrar formas de ahorrar más. Muy útil"</p>
     </div>
   </div>
+  <!-- Botón flotante -->
+  <button class="chat-toggle" (click)="toggleChat()">💬</button>
+  
+  <!-- Ventana de chat -->
+  <div class="chat-window" [class.open]="chatOpen">
+    <div class="chat-header">
+      <p>LLAMA P.A.I 🦙</p>
+      <button class="close-btn" (click)="toggleChat()">✖</button>
+    </div>
+  
+    <div class="chat-messages">
+      <div *ngFor="let msg of messages" [class.user]="msg.from === 'user'" [class.bot]="msg.from === 'bot'">
+        <p [innerHTML]="msg.text"></p>
+      </div>
+    </div>
+  
+    <div class="chat-input">
+      <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Haz una pregunta..." />
+      <button (click)="sendMessage()">Enviar</button>
+        
+    </div>
+  </div>
 </main>
 
 <footer>

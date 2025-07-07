@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+/* Contenedor del formulario */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #f7f7f7;
+  min-height: 90vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Card */
+mat-card {
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  max-width: 520px;
+  width: 100%;
+  background: #f6fff6;
+  border: 1.5px solid #b6e2b6;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Campos del formulario */
+mat-form-field {
+  width: 100%;
+}
+
+input[matInput],
+textarea[matInput],
+mat-select {
+  background-color: #f6fff6;
+  border-radius: 4px;
+  border: 1px solid #b6e2b6;
+  color: #2e7d32;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #7cbf7c;
+  border-color: #7cbf7c;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #388e3c;
+  border-color: #388e3c;
+}
+
+.mat-form-field-label {
+  color: #388e3c !important;
+}
+
+input[matInput]:focus {
+  border-color: #388e3c;
+}
+
+/* Botones */
+button[mat-raised-button] {
+  background-color: #a5d6a7;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  min-width: 140px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08);
+}
+
+button[mat-raised-button]:hover {
+  background-color: #81c784;
+}
+
+button[mat-raised-button][color="warn"] {
+  background-color: #e57373;
+}
+
+button[mat-raised-button][color="warn"]:hover {
+  background-color: #ef5350;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  mat-card {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Fuente global */
+.container,
+mat-card,
+h1,
+mat-form-field,
+input[matInput],
+textarea[matInput],
+button[mat-raised-button] {
+  font-family: 'Roboto', sans-serif;
+}

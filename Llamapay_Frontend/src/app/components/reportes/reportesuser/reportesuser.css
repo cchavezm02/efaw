@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+
+.contenedor-grafico {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulo-grafico {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.subtitulo-grafico {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.envoltorio-grafico {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.leyenda-grafico {
+  background: linear-gradient(90deg, #E8F5E8 0%, #F1F8E9 100%);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+  border-left: 4px solid #4CAF50;
+}
+
+.titulo-leyenda {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin-bottom: 15px;
+}
+
+.elementos-leyenda {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.elemento-leyenda {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.color-leyenda {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 12px;
+  background-color: #4CAF50;
+}
+
+.texto-leyenda {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.estadisticas-grafico {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(90deg, #2E7D32 0%, #4CAF50 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.elemento-estadistica {
+  text-align: center;
+}
+
+.numero-estadistica {
+  font-size: 24px;
+  font-weight: 700;
+  display: block;
+}
+
+.etiqueta-estadistica {
+  font-size: 12px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .estadisticas-grafico {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .elementos-leyenda {
+    flex-direction: column;
+  }
+}

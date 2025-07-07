@@ -1,0 +1,97 @@
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Lista de Usuarios</h1>
+  </div>
+  <div>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   <!-- Position Column -->
+    <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef> ID. </th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+
+  <!-- Name Column -->
+    <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef> Nombre del usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.nameUser}} </td>
+    </ng-container>
+
+  <!-- Weight Column -->
+    <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef> Registro del Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.registrationDateUser|date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+  <!-- Weight Column -->
+    <ng-container matColumnDef="c4">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+  <!-- Weight Column -->
+    <ng-container matColumnDef="c5">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element">
+        <span [ngStyle]="{'color': element.enabled ? 'green' : 'red'}">
+        {{ element.enabled ? 'Activo' : 'Inactivo' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="c6">
+              <th mat-header-cell *matHeaderCellDef> Ver Detalle </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-button color="primary" (click)="verDetalle(element)">
+                  <mat-icon>visibility</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+<ng-container matColumnDef="c7">
+  <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+  <td mat-cell *matCellDef="let element">
+<button mat-button [routerLink]="['/users/ediciones', element.userId]">
+  <mat-icon>edit</mat-icon>
+</button>
+  </td>
+</ng-container>
+
+<ng-container matColumnDef="c8">
+  <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+  <td mat-cell *matCellDef="let element">
+    <button mat-button (click)="eliminar(element.userId)">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+  </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div *ngIf="detalleSeleccionado" class="detalle-container" style="margin-top: 30px;">
+  <mat-card style="padding: 20px; border-radius: 12px; background-color: #f3f9f4;">
+    <mat-card-header>
+      <mat-card-title>Detalle del Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>ID:</strong> {{ detalleSeleccionado?.userId }}</p>
+      <p><strong>Nombre:</strong> {{ detalleSeleccionado?.nameUser }}</p>
+      <p><strong>Apellidos:</strong> {{ detalleSeleccionado?.lastnameUser }}</p>
+      <p><strong>Correo electrónico:</strong> {{ detalleSeleccionado?.emailUser }}</p>
+      <p><strong>Fecha de nacimiento:</strong> {{ detalleSeleccionado?.birthdayUser | date: 'dd/MM/yyyy' }}</p>
+      <p><strong>Fecha de registro:</strong> {{ detalleSeleccionado?.registrationDateUser | date: 'dd/MM/yyyy' }}</p>
+      <p><strong>Username:</strong> {{ detalleSeleccionado?.username }}</p>
+      <p><strong>Estado de Cuenta:</strong> 
+        <span [ngStyle]="{'color': detalleSeleccionado?.enabled ? 'green' : 'red'}">
+          {{ detalleSeleccionado?.enabled ? 'Activo' : 'Inactivo' }}
+        </span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions style="text-align: right;">
+      <button mat-button color="warn" (click)="cerrarDetalle()">Cerrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  </div>
+</div>

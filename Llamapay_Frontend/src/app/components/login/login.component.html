@@ -1,0 +1,58 @@
+<div class="main">
+  <div class="left-side-main">
+    <div class="author-phrase">
+      <p>"No ahorres lo que te sobra, gasta lo que te queda después de ahorrar"</p>
+      <p>- Warren Buffet</p>
+    </div>
+    <div class="author-phrase-img">
+      <img src="assets/images/Warren Buffet's Photo.png" alt="Warren Buffet's Photo" />
+    </div>
+  </div>
+
+  <div class="container-form">
+    <div class="title-form">
+      <h2>Iniciar sesión</h2>
+    </div>
+
+    <form class="login-form" (ngSubmit)="login()">
+      <div class="input-container">
+        <h3 class="subtitle-input">Usuario</h3>
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Nombre de usuario" required />
+      </div>
+
+      <div class="input-container">
+        <h3 class="subtitle-input">Contraseña</h3>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required />
+      </div>
+
+      <div class="input-container">
+        <!-- Botón deshabilitado si username o password están vacíos -->
+        <button type="submit" class="btn-login" [disabled]="!username || !password">
+          Ingresar
+        </button>
+      </div>
+
+      <div class="input-container" id="separation-login">
+        <span>- O -</span>
+      </div>
+
+      <div class="input-container">
+        <div class="buttons-sm-container">
+          <button type="button" class="btn-sm">
+            <img src="assets/images/logo-google.svg" alt="google_logo" />
+          </button>
+          <button type="button" class="btn-sm">
+            <img src="assets/images/logo-facebook.svg" alt="facebook_logo" />
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr />
+
+    <div class="footer-form">
+      <p>¿No tienes cuenta?</p>
+      <a routerLink="/registro" id="log-in">Regístrate</a>
+    </div>
+  </div>
+</div>

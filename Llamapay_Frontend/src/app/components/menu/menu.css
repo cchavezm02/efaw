@@ -1,0 +1,33 @@
+.custom-toolbar {
+ background-color: #98BE93;
+}
+
+
+.btn-rojo {
+ background-color: #506C4D;
+ border-radius: 4px;
+ margin: 4px;
+ border: none;
+}
+
+.btn-rojo mat-icon {
+ color: white;
+}
+
+
+.custom-toolbar button,
+.custom-toolbar mat-icon {
+ color: white;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 500;
+}

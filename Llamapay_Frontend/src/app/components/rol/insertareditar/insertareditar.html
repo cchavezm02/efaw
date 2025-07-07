@@ -1,0 +1,48 @@
+<div class="container">
+  <div style="text-align: center; margin: 5%;">
+    <h1>{{ edicion ? 'ACTUALIZAR ROL DE USUARIO' : 'REGISTRO DE ROL A USUARIO' }}</h1>
+  </div>
+
+  <div style="text-align: center; margin: 5%;">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <!-- ID (solo visible en edición) -->
+      <mat-form-field *ngIf="edicion">
+        <mat-label>ID Rol</mat-label>
+        <input matInput formControlName="id" readonly />
+      </mat-form-field>
+
+      <br />
+
+      <!-- Selector de Rol -->
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo de Rol</mat-label>
+        <mat-select formControlName="roles">
+          <mat-option *ngFor="let food of TipoRol" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br />
+
+      <!-- Selector de Usuario -->
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="user">
+          <mat-option *ngFor="let food of listaUsuarios" [value]="food.userId">
+            {{ food.nameUser }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br />
+
+      <!-- Botón -->
+      <button mat-raised-button color="primary">
+        {{ edicion ? 'Actualizar Rol del Usuario' : 'Registrar Rol al Usuario' }}
+      </button>
+
+    </form>
+  </div>
+</div>

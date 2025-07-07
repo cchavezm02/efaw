@@ -1,0 +1,14 @@
+<div class="container-servicio">
+  <div class="header">
+    <h1>Servicios por Categoría</h1>
+  </div>
+
+  <div class="chart-container">
+    <canvas baseChart
+      [data]="{ labels: barChartLabels, datasets: barChartData }"
+      [type]="barChartType"
+      [options]="barChartOptions"
+      [legend]="barChartLegend">
+    </canvas>
+  </div>
+</div>

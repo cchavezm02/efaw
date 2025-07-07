@@ -1,0 +1,76 @@
+<body>
+  <header id="navbar">
+    <a routerLink="/">
+      <img class="logo" src="./assets/images/Logo2.svg" alt="LlamaPay_logo">
+    </a>
+  </header>
+  <main class="main">
+    <div class="container-form">
+      <div class="title-form">
+        <h2>{{ edicion ? 'Actualizar tus datos' : 'Regístrate' }}</h2>
+        <p *ngIf="!edicion">Es rápido y fácil</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="insertar()" class="register-form">
+        <div class="input-container" *ngIf="edicion">
+          <h3 class="subtitle-input">ID</h3>
+          <input type="text" formControlName="codigo" readonly />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Nombre</h3>
+          <input type="text" formControlName="name" placeholder="Nombre" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Apellidos</h3>
+          <input type="text" formControlName="lastname" placeholder="Apellidos" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Usuario</h3>
+          <input type="text" formControlName="username" placeholder="Nombre de usuario" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Email</h3>
+          <input type="email" formControlName="email" placeholder="Correo electrónico" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Contraseña</h3>
+          <input type="password" formControlName="password" placeholder="Contraseña" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Fecha de nacimiento</h3>
+          <input type="date" formControlName="birthday" />
+        </div>
+
+        <div class="input-container">
+          <h3 class="subtitle-input">Estado</h3>
+          <select formControlName="estadoUsuario">
+            <option *ngFor="let u of estados" [value]="u.value">{{ u.viewValue }}</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <button type="submit" class="btn-register">
+            {{ edicion ? 'Actualizar usuario' : 'Regístrate' }}
+          </button>
+        </div>
+
+        <div class="input-container" *ngIf="mostrarEliminar()">
+          <button type="button" class="btn-register btn-danger" (click)="eliminar()">
+            Eliminar cuenta
+          </button>
+        </div>
+
+        <div class="footer-form">
+          <p>¿Ya tienes cuenta?</p>
+          <a routerLink="/login">Inicia sesión</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>

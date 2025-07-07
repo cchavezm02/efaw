@@ -1,0 +1,35 @@
+<div class="contenedor-grafico">
+  <h2 class="titulo-grafico">Usuarios por mes de cumpleaños (2025)</h2>
+  <p class="subtitulo-grafico">Distribución mensual de cumpleaños registrados de los usuarios</p>
+  
+  <div class="envoltorio-grafico">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="barChartType">
+    </canvas>
+  </div>
+
+  <div class="leyenda-grafico">
+    <div class="titulo-leyenda">Información del Gráfico</div>
+    <div class="elementos-leyenda">
+      <div class="elemento-leyenda">
+        <div class="color-leyenda" style="background-color: #4CAF50;"></div>
+        <span class="texto-leyenda">Cantidad de usuarios por mes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="estadisticas-grafico" *ngIf="barChartData && barChartData[0]?.data?.length">
+    <div class="elemento-estadistica">
+      <span class="numero-estadistica">{{ obtenerTotalUsuarios() }}</span>
+      <span class="etiqueta-estadistica">Total Usuarios</span>
+    </div>
+    <div class="elemento-estadistica">
+      <span class="numero-estadistica">{{ obtenerMesesActivos() }}</span>
+      <span class="etiqueta-estadistica">Meses con cumpleaños</span>
+    </div>
+  </div>
+</div>

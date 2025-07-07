@@ -1,0 +1,58 @@
+<div class="contenedor-grafico">
+  <h2 class="titulo-grafico">Comparación de Objetivos de Ahorro</h2>
+  <p class="subtitulo-grafico">Monto objetivo vs monto actual de la cesta de productos por usuario</p>
+  
+  <div class="envoltorio-grafico">
+    <div style="display: block; width: 100%; height: 400px;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [type]="barChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="leyenda-grafico">
+    <div class="titulo-leyenda">Información del Gráfico</div>
+    <div class="elementos-leyenda">
+      <div class="elemento-leyenda">
+        <div class="color-leyenda" style="background-color: #4CAF50;"></div>
+        <span class="texto-leyenda">Monto Objetivo - Meta de ahorro establecida</span>
+      </div>
+      <div class="elemento-leyenda">
+        <div class="color-leyenda" style="background-color: #81C784;"></div>
+        <span class="texto-leyenda">Monto Cesta - Ahorro actual acumulado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="estadisticas-grafico" *ngIf="barChartData && barChartData[0]?.data?.length">
+    <div class="elemento-estadistica">
+      <span class="numero-estadistica">{{ obtenerTotalUsuarios() }}</span>
+      <span class="etiqueta-estadistica">Usuarios</span>
+    </div>
+    <div class="elemento-estadistica">
+      <span class="numero-estadistica">${{ obtenerPromedioObjetivo() | number:'1.0-0' }}</span>
+      <span class="etiqueta-estadistica">Promedio Objetivo</span>
+    </div>
+    <div class="elemento-estadistica">
+      <span class="numero-estadistica">{{ obtenerUsuariosQueAlcanzaron() }}</span>
+      <span class="etiqueta-estadistica">Objetivos Alcanzados</span>
+    </div>
+  </div>
+
+  <div class="comparacion-resultados" *ngIf="barChartData && barChartData[0]?.data?.length">
+    <div class="tarjeta-comparacion" 
+         *ngFor="let usuario of obtenerComparacionUsuarios()"
+         [class.objetivo-alcanzado]="usuario.alcanzado"
+         [class.objetivo-pendiente]="!usuario.alcanzado">
+      <div class="titulo-tarjeta">{{ usuario.nombre }}</div>
+      <div class="valor-tarjeta">${{ usuario.diferencia | number:'1.0-0' }}</div>
+      <div class="progreso-objetivo">
+        <div class="barra-progreso" [style.width.%]="usuario.porcentaje"></div>
+      </div>
+    </div>
+  </div>
+</div>

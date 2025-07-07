@@ -1,0 +1,41 @@
+<div class="chart-container">
+  <h2 class="chart-title">Productos por Tienda</h2>
+  <p class="chart-subtitle">Distribución de unidades de productos en las diferentes tiendas</p>
+  
+  <div class="chart-wrapper">
+    <div style="display: block; width: 100%; height: 400px;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [type]="barChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="chart-legend">
+    <div class="legend-title">Información del Gráfico</div>
+    <div class="legend-items">
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: #4CAF50;"></div>
+        <span class="legend-text">Total de Unidades por Producto-Tienda</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-stats" *ngIf="barChartData && barChartData[0]?.data?.length">
+    <div class="stat-item">
+      <span class="stat-number">{{ barChartLabels.length }}</span>
+      <span class="stat-label">Productos</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ getTotalUnidades() }}</span>
+      <span class="stat-label">Unidades Totales</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ getTiendas() }}</span>
+      <span class="stat-label">Tiendas</span>
+    </div>
+  </div>
+</div>

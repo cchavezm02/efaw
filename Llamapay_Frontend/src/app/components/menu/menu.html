@@ -1,0 +1,185 @@
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
+  <!-- HOME -->
+  <div>
+    <button mat-button [routerLink]="['home']" style="color: white">
+      <mat-icon>home</mat-icon> Home
+    </button>
+  </div>
+
+  <!-- ADMIN: Usuarios y Roles -->
+  <div *ngIf="esAdmin()">
+    <button mat-button [matMenuTriggerFor]="menuUsuarios" class="btn-rojo">
+      <mat-icon>computer</mat-icon> Usuarios
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuRoles" class="btn-rojo">
+      <mat-icon>settings</mat-icon> Roles
+    </button>
+  </div>
+  <!-- CLIENTE: Objetivo Ahorro, Método Pago, Transacción, Tipos -->
+  <div *ngIf="esCliente()">
+    <button mat-button [matMenuTriggerFor]="menuObjetivoAhorros" class="btn-rojo">
+      <mat-icon>savings</mat-icon> Objetivos de Ahorro
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuMetodoPagos" class="btn-rojo">
+      <mat-icon>payment</mat-icon> Métodos de Pago
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuTransaccion" class="btn-rojo">
+      <mat-icon>compare_arrows</mat-icon> Transacciones
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuTipoTransaccion" class="btn-rojo">
+      <mat-icon>category</mat-icon> Tipos de Transacción
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuTipoCuenta" class="btn-rojo">
+      <mat-icon>account_balance</mat-icon> Tipos de Cuenta
+    </button>
+        <button mat-button [matMenuTriggerFor]="menuServicios" class="btn-rojo">
+      <mat-icon>business</mat-icon> Servicios
+    </button>
+        <button mat-button [matMenuTriggerFor]="menuCategorias" class="btn-rojo">
+      <mat-icon>category</mat-icon> Categorías de servicios
+    </button>
+        <button mat-button [matMenuTriggerFor]="menuTiendas" class="btn-rojo">
+      <mat-icon>store</mat-icon> Tiendas
+    </button>
+        <button mat-button [matMenuTriggerFor]="menuProductos" class="btn-rojo">
+      <mat-icon>inventory_2</mat-icon> Productos
+    </button>
+  </div>
+
+  <!-- ADMIN, TESTER, CLIENTE: Reportes -->
+    <div *ngIf="esAdmin() || esTester() || esCliente()">
+      <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+      <mat-icon>bar_chart</mat-icon> Reportes
+    </button>
+  </div>
+  <!-- Espaciador -->
+  <span class="toolbar-spacer"></span>
+
+    <!-- Usuario -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuCuenta" class="btn-rojo">
+      <mat-icon>person</mat-icon> Usuario
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<!-- Menú Usuarios -->
+<mat-menu #menuUsuarios="matMenu">
+  <button mat-menu-item routerLink="/users">Listar</button>
+  <button mat-menu-item routerLink="/users/formularioU">Registrar</button>
+</mat-menu>
+
+<!-- Menú Roles -->
+<mat-menu #menuRoles="matMenu">
+  <button mat-menu-item routerLink="/roles">Listar</button>
+  <button mat-menu-item routerLink="/roles/formularioR">Registrar</button>
+</mat-menu>
+
+<!-- Menú Objetivos de Ahorro -->
+<mat-menu #menuObjetivoAhorros="matMenu">
+  <button mat-menu-item routerLink="/objetivoahorros">Listar</button>
+  <button mat-menu-item routerLink="/objetivoahorros/formularioOA">Registrar</button>
+</mat-menu>
+
+<!-- Menú Métodos de Pago -->
+<mat-menu #menuMetodoPagos="matMenu">
+  <button mat-menu-item routerLink="/metodopagos">Listar</button>
+  <button mat-menu-item routerLink="/metodopagos/formularioM">Registrar</button>
+</mat-menu>
+
+<!-- Menú Transacciones -->
+<mat-menu #menuTransaccion="matMenu">
+  <button mat-menu-item routerLink="/transaccion/listar">Listar</button>
+  <button mat-menu-item routerLink="/transaccion/insertar">Registrar</button>
+</mat-menu>
+
+<!-- Menú Tipos de Transacción -->
+<mat-menu #menuTipoTransaccion="matMenu">
+  <button mat-menu-item routerLink="/tipotransaccion/listar">Listar</button>
+  <button mat-menu-item routerLink="/tipotransaccion/insertar">Registrar</button>
+</mat-menu>
+
+<!-- Menú Tipos de Cuenta -->
+<mat-menu #menuTipoCuenta="matMenu">
+  <button mat-menu-item routerLink="/tipocuenta/listar">Listar</button>
+  <button mat-menu-item routerLink="/tipocuenta/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuServicios="matMenu">
+  <button mat-menu-item routerLink="/servicios">Listar</button>
+  <button mat-menu-item routerLink="/servicios/insertarservicio">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuCategorias="matMenu">
+  <button mat-menu-item routerLink="/categorias">Listar</button>
+  <button mat-menu-item routerLink="/categorias/insertarcategoria">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuTiendas="matMenu">
+  <button mat-menu-item routerLink="/tiendas">Listar</button>
+  <button mat-menu-item routerLink="/tiendas/formularioT">Registrar</button>
+  <button mat-menu-item routerLink="/tiendas/buscartienda">Buscar</button>
+</mat-menu>
+
+<mat-menu #menuProductos="matMenu">
+  <button mat-menu-item routerLink="/productos">Listar</button>
+  <button mat-menu-item routerLink="/productos/formularioP">Registrar</button>
+  <button mat-menu-item routerLink="/productos/buscarproducto">Buscar</button>
+</mat-menu>
+
+
+<!-- Menú Reportes -->
+<mat-menu #menuReportes="matMenu">
+    <button mat-menu-item routerLink="/reportes/metodospagosgrafica">
+    <mat-icon>bar_chart</mat-icon> Métodos de Pago
+  </button>
+  <button mat-menu-item routerLink="/reportes/productospriceandunit">
+    <mat-icon>bar_chart</mat-icon> Productos y Precios
+  </button>
+  <button mat-menu-item routerLink="/reportes/graficUser" *ngIf="esAdmin() || esTester()">
+    <mat-icon>insert_chart</mat-icon> Cumpleaños por Mes
+  </button>
+  <button mat-menu-item routerLink="/reportes/metacestaobjetivo">
+    <mat-icon>insert_chart</mat-icon> Meta Cesta Objetivo
+  </button>
+  <button mat-menu-item routerLink="/reportes/montocategorias">
+    <mat-icon>insert_chart</mat-icon> Monto por Categoría
+  </button>
+  <button mat-menu-item routerLink="/reportes/categoriaservicio">
+    <mat-icon>insert_chart</mat-icon> Categoria Servicios
+  </button>
+    <button mat-menu-item routerLink="/reportes/cantidadTransanccionesporFecha">
+    <mat-icon>insert_chart</mat-icon> Cantidad transacciones por Fecha
+  </button>
+    <button mat-menu-item routerLink="/reportes/montotransaccionesporfecha">
+    <mat-icon>insert_chart</mat-icon> MontoTransacciones por fecha
+  </button>
+</mat-menu>
+
+<!-- Menú Cuenta -->
+<mat-menu #menuCuenta="matMenu">
+  <!-- Mostrar el nombre de usuario -->
+  <button mat-menu-item disabled>
+    <mat-icon>person</mat-icon>
+    {{ getUsername() }}
+  </button>
+
+  <!-- Mostrar el rol solo si NO es CLIENTE -->
+  <button mat-menu-item disabled *ngIf="!esCliente()">
+    <mat-icon>verified_user</mat-icon>
+    {{ getRole() }}
+  </button>
+
+  <!-- Mostrar "Ver detalle" solo si ES CLIENTE -->
+  <button mat-menu-item *ngIf="esCliente()" routerLink="/perfil">
+    <mat-icon>manage_accounts</mat-icon>
+    Ver detalle
+  </button>
+
+  <!-- Botón para cerrar sesión -->
+  <button mat-menu-item (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    Cerrar sesión
+  </button>
+</mat-menu>

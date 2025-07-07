@@ -1,0 +1,82 @@
+.container-tipotransaccion-listar {
+  padding: 24px;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  min-height: 100vh;
+}
+
+.container-tipotransaccion-listar h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+  padding: 0 40px 40px 40px;
+  justify-items: stretch; /* que se estiren a ocupar el espacio */
+}
+
+/* Tarjetas que ocupan todo el ancho de su columna */
+.transaccion-card {
+  width: 100%;
+  background-color: #f6fff6;
+  border: 1.5px solid #b6e2b6;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s ease;
+}
+
+.transaccion-card:hover {
+  transform: scale(1.01);
+}
+
+mat-card-content p {
+  margin: 6px 0;
+  font-family: 'Roboto', sans-serif;
+  color: #388e3c;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+button[mat-raised-button] {
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #388e3c;
+}
+
+button[mat-button] mat-icon {
+  color: #2e7d32 !important;
+  transition: color 0.2s;
+  font-size: 20px;
+}
+
+button[mat-button]:hover mat-icon {
+  color: #1b5e20 !important;
+}

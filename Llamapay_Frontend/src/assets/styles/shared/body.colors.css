@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 400;
+    color: #000;
+
+    --dark_green: #506C4D;
+    --light_green: #98BE93;
+    --suscribe_color: #FCD683;
+    --cream: #FBFFFB;
+    --green_bg: #DAFFD6;
+    --footer_bg: #474747;
+    --asparagus: #5A855D;
+    --snow: #F1F1F1;
+    --black-hover: #141f15;
+    --white: #fff;
+    --gray: #8B8B8B;
+    --red-forbidden: #f12323;
+    --jet-black: #252525;
+    --pastel-green: #73AE8A;
+}

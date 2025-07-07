@@ -1,0 +1,230 @@
+header {   
+    display: flex; 
+    background: linear-gradient(90deg, var(--dark_green), var(--light_green));
+    color: white;
+    max-height: 5.625rem;
+    min-height: 4.375rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    max-width: 9rem;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    transition: all .5s;
+}
+
+header .nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    align-items: center;
+    letter-spacing: 0.05em;
+}
+
+header .perfil {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    letter-spacing: 0.05em;
+}
+
+.nav .navul-element {
+    width: 170px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    border-radius: 10px;
+}
+.nav .navul-element:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.navul-element a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.activated {
+    background-color: var(--light_green);
+    color: var(--jet-black);
+}
+#ul-element-profile {display: none;}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    width: 170px;
+    z-index: 999;
+    background-color: var(--green_bg);
+    box-shadow: .5px 4px 4px rgba(0, 0, 0, .2);
+    
+}
+
+.dropdown-content li {
+    margin: 0;
+    transition: .3s;
+}
+.dropdown-content  a {
+    border-radius: 0;
+}
+
+.dropdown-content a {
+    color: var(--footer_bg);
+    padding: .75rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: var(--dark_green);
+}
+
+.dropdown-content li:hover a {
+    color: var(--cream);
+}
+.dropdown-content li:hover .activated:hover {
+    color: var(--footer_bg);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.perfil img{
+    border-radius: 50%;
+    object-fit:cover;
+}
+.perfil p {
+    display: none;
+}
+
+header .register li:last-child a {
+    padding: .625rem 2rem;
+    border-radius: .3125rem;
+    background-color: var(--cream);
+    color: var(--dark_green);
+
+    transition: .2s;
+}
+
+.suscribe {
+    color: var(--suscribe_color);
+}
+
+.nav a:hover {
+    color: #141f15;
+}
+
+.nav .suscribe:hover {
+    color: #ffae00;
+}
+
+header .register li:first-child a:hover {
+    color: #141f15;
+}
+
+header .register li:last-child a:hover {
+    background-color: #141f15;
+    color: var(--cream);
+}
+
+.options-responsive {
+    width: 44px;
+    height: 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.options-responsive span {
+    width: 100%;
+    height: 7.5px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: .3s;
+}
+.options-responsive span:nth-child(2) {
+    width: 60%;
+}
+.options-responsive span:nth-child(3) {
+    width: 80%;
+}
+.options-responsive:hover span {
+    width: 100%;
+}
+.options-responsive.active span {
+    width: 100%;
+}
+
+#check-dropdown-menu {
+    display: none;
+}
+.dropdown-menu {
+    display: none;
+    position:absolute;
+    top: 70px;
+    right: 0;
+    width: 260px;
+    flex-direction: column;
+    align-items: center;
+    background: var(--dark_green);
+    z-index: 4;
+    border-radius: 0 0 0 20px;
+    transition: all .3s;
+}
+.dropdown-menu .navul-element {
+    width: 100%;
+    height: 68px;
+    transition: .5s;
+}
+.dropdown-menu .navul-element a {
+    border-radius: 0;
+}
+.dropdown-menu .navul-element:last-child {
+    border-radius: 0 0 0 20px;
+}
+.navul-element:hover {
+    background-color: var(--light_green);
+}
+
+
+@media screen and (max-width: 1180px) {
+    #navigation-bar {
+        display: none;
+    }
+    .options-responsive {
+        display: flex;
+    }
+    #check-dropdown-menu:checked ~ .dropdown-menu {
+        display: flex;
+    }
+}
+@media screen and (max-width: 400px) {
+    header {
+        padding: 0 1.2em;
+    }
+    .dropdown-menu {
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+    }
+    .dropdown-menu .navul-element:last-child {
+        border-radius: 0 0 20px 20px;
+    }
+}

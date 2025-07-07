@@ -1,0 +1,106 @@
+<div class="container">
+  <div style="text-align: center; margin: 5%;">
+    <h1>{{ actualizar ? 'Actualizar Objetivo de Ahorro' : 'Registrar Objetivo de Ahorro' }}</h1>
+  </div>
+
+  <div style="margin: 0 auto; max-width: 600px;">
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+
+      <!-- ID solo si es edición -->
+      <mat-form-field *ngIf="actualizar" appearance="outline" style="width: 100%;">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" readonly />
+      </mat-form-field>
+
+      <!-- Meta -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Meta del Objetivo</mat-label>
+        <input matInput placeholder="Ej. Comprar Laptop" formControlName="meta" />
+        <mat-error *ngIf="form.get('meta')?.hasError('required')">
+          La meta es obligatoria.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Monto Meta -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Monto Meta</mat-label>
+        <input matInput placeholder="1200.00" formControlName="montoMeta" type="number" />
+        <mat-error *ngIf="form.get('montoMeta')?.hasError('required')">
+          El monto meta es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Fecha Inicial -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Fecha Inicial</mat-label>
+        <input matInput [matDatepicker]="picker1"
+               formControlName="fechaInicial"
+               [matDatepickerFilter]="deshabilitarFechasFuturas" />
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="form.get('fechaInicial')?.hasError('required')">
+          La fecha inicial es obligatoria.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Fecha Final -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Fecha Final</mat-label>
+        <input matInput [matDatepicker]="picker2"
+               formControlName="fechaFinal"
+               [matDatepickerFilter]="deshabilitarFechasAnteriores" />
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        <mat-error *ngIf="form.get('fechaFinal')?.hasError('required')">
+          La fecha final es obligatoria.
+        </mat-error>
+        <mat-error *ngIf="form.get('fechaFinal')?.hasError('fechaInvalida')">
+          La fecha final debe ser posterior a la inicial.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Monto Actual -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Monto Actual</mat-label>
+        <input matInput placeholder="200.00" formControlName="montoActual" type="number" />
+        <mat-error *ngIf="form.get('montoActual')?.hasError('required')">
+          El monto actual es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Estado -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Estado del Objetivo</mat-label>
+        <mat-select formControlName="estado">
+          <mat-option *ngFor="let estado of estadoObjetivos" [value]="estado.value">
+            {{ estado.viewValue }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('estado')?.hasError('required')">
+          El estado es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Usuario -->
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="user">
+          <mat-option *ngFor="let u of listaUsuarios" [value]="u.userId">
+            {{ u.nameUser }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('user')?.hasError('required')">
+          El usuario es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Botón -->
+      <div style="text-align: center; margin-top: 25px;">
+        <button mat-raised-button color="primary">
+          {{ actualizar ? 'Actualizar Objetivo' : 'Registrar Objetivo' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,243 @@
+@import url('../shared/navbar.styles.css');
+@import url('../shared/body.colors.css');
+
+/* Main */
+
+h3 {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.375rem;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 10rem;
+}
+
+.button-new {
+    color:  black;
+    border-radius: 1rem;
+    border: 2px dashed black;
+    padding: 10px 40px;
+
+    font-size: 1.25em;
+    line-height: 1.5rem;
+}
+
+.container h2 { 
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 2.9375rem;
+}
+
+dialog {
+    width: 45%;
+    outline: none;
+    border: 1px solid #ccc;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+form {
+    height: auto;
+    padding: 4rem;
+}
+
+dialog .close {
+    position: absolute;
+    right: .35rem;
+    top: .35rem;
+    cursor: pointer;
+}
+
+dialog .close svg {
+    width: 1.5rem;
+    height: auto;
+}
+
+dialog div:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.25rem;
+}
+
+dialog input {
+    display: block;
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 60%;
+    line-height: 1.2;
+    font-size: .8em;
+    color: var(--footer_bg);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+
+}
+
+dialog textarea{
+    display: block;
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+}
+
+
+dialog .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--light_green);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1rem;
+    border-radius: 0.25rem;
+
+    font-size: 1.2rem;
+    border: 1px solid var(--light_green);
+    text-align: center;
+
+    width: 40%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+
+
+    flex-wrap: wrap;
+    
+    font-size: 1.2em;
+    line-height: 1.5rem;
+
+    border-radius: 0.25rem;
+    /* padding: 10px; */
+}
+
+
+.card-Objetivos {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    
+    font-size: 1.2em;
+    line-height: 3rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
+}
+
+.wrap img {
+    background-color: white;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: .2rem;
+    top: .2rem;
+    cursor: pointer;
+}
+
+.container-delete-objective {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+.center-container {
+    background-color: var(--snow);
+    width: 300px;
+    height: 240px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.center-container h3 {
+    text-align: center;
+    font-size: 1.6rem;
+}
+.btns-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 14px;
+}
+.btns-form .btn-delete-form {
+    margin: 10px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--asparagus);
+    cursor: pointer;
+    transition: .4s;
+}
+
+#btn-accept:hover {
+    background-color: var(--black-hover);
+}
+#btn-cancel {
+    background-color: var(--gray);
+    color: #000;
+}
+#btn-cancel:hover {
+    background-color: var(--red-forbidden);
+    color: var(--snow);
+}
+
+
+@media screen and (max-width: 660px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+
+
+/* 
+.agregar {
+    display: flex;
+    position: relative;
+    background-color: black;
+    border: none;
+    outline: none;
+
+    justify-content: center;
+
+    z-index: 10;
+}
+.agregar svg {
+    width: 3.75rem;
+    height: auto;
+    fill: var(--footer_bg);
+
+    display: block;
+    margin: auto;
+} */

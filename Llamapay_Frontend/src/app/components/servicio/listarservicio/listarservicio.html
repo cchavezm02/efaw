@@ -1,0 +1,24 @@
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Lista de servicios</h1>
+  </div>
+
+  <div class="cards-container">
+    <mat-card class="servicio-card" *ngFor="let servicio of dataSource.data">
+      <mat-card-title>{{ servicio.idService }}</mat-card-title>
+      <mat-card-subtitle>Servicio: {{ servicio.nameService }}</mat-card-subtitle>
+      <mat-card-content>
+        <p><strong>Compania:</strong> {{ servicio.nameCompanyService }}</p>
+        <p><strong>Categoría:</strong> {{ servicio.category.idCategory }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['ediciones', servicio.idService]" aria-label="Editar servicio">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button (click)="eliminar(servicio.idService)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

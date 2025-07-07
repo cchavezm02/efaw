@@ -1,0 +1,36 @@
+<div class="container-tiendas">
+  <div class="header">
+    <h1>Lista de Tiendas</h1>
+  </div>
+
+  <div class="tiendas-grid">
+    <mat-card class="tienda-card" *ngFor="let tienda of tiendas">
+      <!-- Imagen de la tienda -->
+      <div class="card-image">
+        <img src ="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGllbmRhJTIwZGUlMjBhYmFycm90ZXN8ZW58MHx8MHx8fDA%3D" alt="Imagen de la tienda {{ tienda.nombretienda }}"/>
+        <div class="image-overlay">
+          <span class="tienda-id">ID: {{ tienda.idtienda }}</span>
+        </div>
+      </div>
+
+      <!-- Información de la tienda -->
+      <mat-card-header>
+        <mat-card-title>{{ tienda.nombretienda }}</mat-card-title>
+        <mat-card-subtitle>
+          <mat-icon>location_on</mat-icon>
+          {{ tienda.direccion }}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <!-- Acciones -->
+      <mat-card-actions align="end">
+        <button mat-icon-button color="accent" [routerLink]="['ediciones', tienda.idtienda]">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="eliminar(tienda.idtienda)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

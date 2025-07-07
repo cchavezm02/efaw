@@ -1,0 +1,27 @@
+<div class="container-tipotransaccion-listar">
+  <h1>Lista de Tipos de Transacción</h1>
+
+  <div class="acciones">
+    <button mat-raised-button color="primary" [routerLink]="['/tipotransaccion/insertar']">
+      Registrar Nuevo
+    </button>
+  </div>
+
+  <div class="contenedor-grid">
+    <mat-card class="tipotransaccion-card" *ngFor="let t of lista">
+      <mat-card-content>
+        <p><strong>ID:</strong> {{ t.tipoGastoId }}</p>
+        <p><strong>Descripción:</strong> {{ t.descripcion }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button color="primary" aria-label="Editar" (click)="editar(t.tipoGastoId)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warn" aria-label="Eliminar" (click)="eliminar(t.tipoGastoId)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

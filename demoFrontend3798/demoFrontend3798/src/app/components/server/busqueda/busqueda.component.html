@@ -1,0 +1,71 @@
+<div class="container" >
+  <div style="text-align: center;margin:5%">
+    <h1 style="color: rgb(215, 55, 11);">Buscar por proveedor</h1>
+  </div> 
+   <div class="search-container">
+  
+    <form class="example-form" [formGroup]="form" >
+      <mat-form-field class="example-full-width">
+        <mat-label style="color: rgb(215, 55, 11);">Nombre del Proveedor: </mat-label>
+        <input matInput formControlName="nombrebusqueda" style="color: rgb(244, 189, 174);">
+      </mat-form-field>   
+     
+    </form>
+  </div>
+
+  <div >
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="c1">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.idServer}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="c2">
+    <th mat-header-cell *matHeaderCellDef> Servidor </th>
+    <td mat-cell *matCellDef="let element"> {{element.nameServer}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="c3">
+    <th mat-header-cell *matHeaderCellDef> IP </th>
+    <td mat-cell *matCellDef="let element"> {{element.ipServer}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="c4">
+    <th mat-header-cell *matHeaderCellDef> Ubicación </th>
+    <td mat-cell *matCellDef="let element"> {{element.ubicationServer}} </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="c5">
+    <th mat-header-cell *matHeaderCellDef> SO </th>
+    <td mat-cell *matCellDef="let element"> {{element.soServer}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="c6">
+    <th mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+    <td mat-cell *matCellDef="let element"> {{element.startDateOperationServer| date:'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="c7">
+    <th mat-header-cell *matHeaderCellDef> Proveedor </th>
+    <td mat-cell *matCellDef="let element"> {{element.providerServer}} </td>
+  </ng-container>
+
+        
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+ <div *ngIf="noResults" style="color: #226c7f;">
+      No hay coincidencias.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+  <div style="text-align: center;margin:5%;"><h1 style="color: rgb(215, 55, 11);">Lista de Aplicaciones</h1></div>
+ 
+
+  <div style="text-align: center;margin:5%">
+    <mat-table #table [dataSource]="dataSource">
+  
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="c1">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.idApp}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="c2">
+        <mat-header-cell *matHeaderCellDef> Aplicación </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nameApp}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="c3">
+        <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.stateApp ? "Activo" : "Inactivo"}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="c4">
+        <mat-header-cell *matHeaderCellDef> Fecha</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.implementationDateApp| date: 'dd/MM/yyyy'}} </mat-cell>
+      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="c5">
+            <mat-header-cell *matHeaderCellDef> Monto </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.amountApp}} </mat-cell>
+          </ng-container>
+               <ng-container matColumnDef="c6">
+            <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.typeApp}} </mat-cell>
+          </ng-container>
+               <ng-container matColumnDef="c7">
+            <mat-header-cell *matHeaderCellDef> Servidor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.server.nameServer}} </mat-cell>
+          </ng-container>
+       
+        
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+   
+  </div>
+</div>

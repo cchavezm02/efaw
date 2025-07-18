@@ -1,0 +1,7 @@
+
+  @media (max-width: 768px) {
+    .chart-container {
+      width: 100%; /* Ajusta el ancho para pantallas más pequeñas */
+      padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+    }
+  }

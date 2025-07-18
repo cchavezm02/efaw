@@ -1,0 +1,25 @@
+.custom-toolbar {
+  background-color: rgb(215, 55, 11); /* rojo */
+}
+
+/* Esto afecta el texto e íconos dentro del botón */
+.btn-rojo {
+  background-color: rgb(215, 55, 11);
+  border-radius: 4px;
+  margin: 4px;
+  border: none;
+}
+
+/* Asegura que el <mat-icon> también sea blanco */
+.btn-rojo mat-icon {
+  color: white;
+}
+
+/* Si necesitas que también el texto de la toolbar sea blanco */
+.custom-toolbar button,
+.custom-toolbar mat-icon {
+  color: white;
+}
+.toolbar-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,77 @@
+<div class="container" style="text-align: center; margin: 5%">
+  <h2 style="color: red;">Registro de aplicaciones</h2>
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Aplicación:</mat-label>
+      <input matInput placeholder="100" formControlName="name" />
+      <mat-error *ngIf="form.get('name')?.hasError('required')"
+        >El nombre es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br>
+    <div class="custom-field">
+        <label>Estado</label>
+        <mat-radio-group
+          [(ngModel)]="estado"
+          formControlName="state"
+          aria-label="Estado"
+        >
+          <mat-radio-button [value]="true">Activo</mat-radio-button>
+          <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+
+    <br />
+    <mat-form-field>
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateImpl" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('dateImpl')?.hasError('required')"
+        >La fecha es obligatoria.</mat-error
+      >
+    </mat-form-field>
+    <br />
+   <mat-form-field class="example-full-width">
+      <mat-label>Monto</mat-label>
+      <input matInput placeholder="100" formControlName="amount" />
+      <mat-error *ngIf="form.get('amount')?.hasError('required')"
+        >El monto es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+    <mat-label>Tipo de aplicación</mat-label>
+    <mat-select formControlName="type">
+        @for (food of tipos; track food) {
+        <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+        }
+    </mat-select>
+    <mat-error *ngIf="form.get('type')?.hasError('required')"
+            >El tipo es obligatorio.</mat-error
+        >
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Servidor</mat-label>
+      <mat-select formControlName="server">
+        <mat-option *ngFor="let c of listaServidores" [value]="c.idServer">
+          {{ c.nameServer }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('server')?.hasError('required')"
+        >El servidor es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <button mat-raised-button class="custom-button">Aceptar</button>
+
+  </form>
+</div>

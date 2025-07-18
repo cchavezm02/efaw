@@ -1,0 +1,79 @@
+<div class="container" style="text-align: center;margin: 5%;">
+  <h2 style="color: rgb(215, 55, 11);">Registro de servidores</h2>
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">    
+
+        <mat-form-field class="example-full-width" *ngIf="edicion" >
+          <mat-label>Codigo</mat-label>
+          <input matInput placeholder="Codigo" formControlName="id"/>
+          <mat-error *ngIf="form.get('id')?.hasError('required')"
+        >El ID no se modifica.</mat-error
+      >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+
+      <mat-label>Servidor</mat-label>
+      <input matInput placeholder="Nombre del sevidor" formControlName="name" />
+      <mat-error *ngIf="form.get('name')?.hasError('required')"
+        >Ingrese nombre</mat-error
+      >
+    </mat-form-field>
+<br>
+    <mat-form-field class="example-full-width">
+      <mat-label>IP:</mat-label>
+      <input matInput placeholder="192.105.105.1" formControlName="ip" />
+      <mat-error *ngIf="form.get('ip')?.hasError('required')"
+        >El IP es obligatorio</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Ubicación:</mat-label>
+      <input matInput placeholder="EE.UU" formControlName="ubication" />
+      <mat-error *ngIf="form.get('ubication')?.hasError('required')"
+        >La ubicación es obligatoria</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Sistema Operativo:</mat-label>
+      <input matInput placeholder="Linux" formControlName="so" />
+      <mat-error *ngIf="form.get('so')?.hasError('required')"
+        >El sistema operativo es obligatorio</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Fecha de inicio de operación</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateStart" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('dateStart')?.hasError('required')"
+        >La fecha es obligatoria.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Proveedor: </mat-label>
+      <mat-select formControlName="provider">
+        <mat-option *ngFor="let p of proveedores" [value]="p.value">
+          {{ p.viewValue }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('provider')?.hasError('required')"
+        >El proveedor es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button color="primary">Aceptar</button>
+  <!--  <button mat-raised-button color="warn" routerLink="/servidores">
+      Cancelar
+    </button>-->
+  </form>
+</div>

@@ -1,0 +1,17 @@
+package pe.edu.upc.demo3798api.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import pe.edu.upc.demo3798api.entities.App;
+
+import java.util.List;
+
+@Repository
+public interface IAppRepository extends JpaRepository<App,Integer> {
+    @Query(value = "select s.name_server as Servidor ,count(*) as Aplicaciones \n" +
+            " from Server s inner join App a\n" +
+            " on s.id_server=a.id_server\n" +
+            " group by s.name_server", nativeQuery = true)
+    List<String[]> quantityAppByServer();
+}

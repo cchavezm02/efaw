@@ -1,0 +1,94 @@
+<header id="navbar">
+  <a routerLink="/home">
+    <img class="logo" src="assets/images/Logo2.svg" alt="LlamaPay_logo" />
+  </a>
+
+  <nav>
+    <ul class="nav">
+      <li><a href="#presentacion">¿Quiénes somos?</a></li>
+      <li><a href="#resenia">Reseña</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container-1">
+    <div class="element-1">
+      <h1>Administra tu dinero con facilidad</h1>
+      <p>Sé parte de nosotros y mejora la forma en que administras tu dinero</p>
+      <button class="btn-1 btn-pago-simulacion" (click)="pagar()">
+        Simular pago con Stripe 💳
+      </button>
+    </div>
+    <img class="img" src="assets/images/money.png" alt="money_card" />
+  </div>
+
+  <h2>¿Quieres saber quiénes somos?</h2>
+
+  <div class="container-2" id="presentacion">
+    <div>
+      <h3>Hola Somos WiseCoin</h3>
+      <p>Nuestra meta es ayudar a las personas a que aprendan a gestionar su dinero. Para eso creamos LlamaPay, una app que nos brindará apoyo para conseguir esta meta.</p>
+    </div>
+    <img src="assets/images/WiseCoin.png" alt="WiseCoin_logo" />
+  </div>
+
+  <div class="container-3">
+    <div class="element-2">
+      <img src="assets/images/cerditoAlcancía.png" alt="alcancia_card" />
+      <h3>Mejora La Forma De Ahorrar</h3>
+      <p>Podrás Ingresar Los Gastos y Verás Gráficamente Cómo Éstos Varían.</p>
+      <button>Más información</button>
+    </div>
+
+    <div class="element-2">
+      <img src="assets/images/recordatorios.png" alt="recordatorio_card" />
+      <h3>Registra Una Meta De Ahorros</h3>
+      <p>Podrás Registrar Tus Metas de Ahorro y Así Cumplir Tus Objetivos</p>
+      <button>Más información</button>
+    </div>
+  </div>
+
+  <h2 id="resenia">¡Algunas Opiniones De Nuestros Usuarios Satisfechos!</h2>
+
+  <div class="container-4">
+    <div class="text-com">
+      <p>Joaquín Guardiola</p>
+      <p>"¡Me encanta esta aplicación! Me ha dado un control total sobre mis finanzas y me motiva a ahorrar cada día"</p>
+    </div>
+    <div class="text-com">
+      <p>María Lourdes Vilar</p>
+      <p>"¡Increíble! Esta aplicación de ahorros me ha ayudado a establecer metas y ahorrar sin problemas. Fácil de usar y muy útil"</p>
+    </div>
+    <div class="text-com">
+      <p>Judith López</p>
+      <p>"La funcionalidad de metas de ahorro es genial. Puedo establecer objetivos específicos y ver mi progreso constantemente"</p>
+    </div>
+    <div class="text-com">
+      <p>Alejandro Vásquez Quito</p>
+      <p>"Esta aplicación me ha ayudado a entender mis patrones de gasto y encontrar formas de ahorrar más. Muy útil"</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="social-media">
+    <a href="#"><img src="assets/images/logo-facebook.svg" alt="facebook_logo" /></a>
+    <a href="#"><img src="assets/images/logo-twitter.svg" alt="twitter_logo" /></a>
+    <a href="#"><img src="assets/images/logo-youtube.svg" alt="youtube_logo" /></a>
+    <a href="#"><img src="assets/images/logo-instagram.svg" alt="instagram_logo" /></a>
+    <a href="#"><img src="assets/images/logo-linkedin.svg" alt="linkedin_logo" /></a>
+  </div>
+  <p class="text-footer">WiseCoin</p>
+  <p class="small">Copyright © 2023 WiseCoin</p>
+  <div class="legal">
+    <a href="#"><p class="paragraph">Información legal</p></a>
+    <a href="#"><p class="paragraph">Política de privacidad</p></a>
+  </div>
+</footer>
+
+<a href="#navbar" id="up">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+  </svg>
+</a>

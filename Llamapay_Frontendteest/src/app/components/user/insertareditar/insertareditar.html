@@ -1,0 +1,108 @@
+<div class="container">
+      <div style="text-align: center; margin: 20px 0;">
+        <h1>{{ edicion ? 'Actualizar Datos del Usuario' : 'Registrar Usuario' }}</h1>
+      </div> 
+    <div style="text-align: center;margin: 5%;">
+    <form [formGroup]="form" (submit)="insertar()">
+      <mat-form-field *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo">
+
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El codigo del usuario es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="name">
+
+        <mat-error *ngIf="form.get('name')?.hasError('required')">
+          El nombre del Usuario es obligatorio!
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Apellido del Usuario</mat-label>
+        <input matInput formControlName="lastname">
+
+        <mat-error *ngIf="form.get('lastname')?.hasError('required')">
+          El apellido es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+       <br>
+
+      <mat-form-field>
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput formControlName="email">
+
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          El email es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+       <br>
+
+      <mat-form-field>
+        <mat-label>Dia de Nacimiento</mat-label>
+        <input matInput matInput [matDatepicker]="picker1" formControlName="birthday">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="form.get('birthday')?.hasError('required')">
+          El dia de nacimiento es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <mat-label>Registro del usuario</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="registrationDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        <mat-error *ngIf="form.get('registrationDate')?.hasError('required')">
+          El Registro del usuario es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <mat-label>USERNAME</mat-label>
+        <input matInput formControlName="username">
+
+        <mat-error *ngIf="form.get('username')?.hasError('required')">
+          El username es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+    <br>
+      <mat-form-field>
+      <mat-label>PASSWORD</mat-label>
+      <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="form.get('password')?.hasError('required')">
+         La contraseña es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+
+
+    <br>
+    <mat-form-field class="example-full-width">
+  <mat-label>Estado de Cuenta</mat-label>
+  <mat-select formControlName="estadoUsuario">
+    <mat-option *ngFor="let u of estados" [value]="u.value">
+      {{ u.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+    <br />
+
+        <button mat-raised-button color="primary">{{ edicion ? 'Actualizar Datos del usuario' : 'Registrar cliente' }}</button>
+        <button mat-raised-button color="warn" routerLink="/users">
+        Regresar a lista de usuarios registrados en LlamaPay!
+        </button>
+
+    </form>
+  </div>
+</div>

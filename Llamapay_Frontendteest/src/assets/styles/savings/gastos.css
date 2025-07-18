@@ -1,0 +1,336 @@
+@import url('../shared/navbar.styles.css');
+@import url('../shared/body.colors.css');
+
+/* Main */
+
+h3 {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.375rem;
+    
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 10rem;
+}
+.container-2 {
+    margin: 10px auto;
+    width: 90%;
+}
+
+.button-new {
+    color: var(--jet-black);
+    border-radius: 1rem;
+    border: 2px dashed var(--jet-black);
+    padding: 10px 40px;
+
+    font-size: 1.25em;
+    line-height: 1.5rem;
+}
+
+.container h2 {
+    font-weight: 200;
+    font-size: 2.5rem;
+    line-height: 2.9375rem;
+}
+
+
+/* calendario---------------------------------------------------> */
+#calendar-container {
+    text-align: center;
+}
+#calendar-container h3 {
+    margin-bottom: 0.6em;
+}
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 400px;
+}
+
+th {
+    background-color: var(--asparagus);
+    border: 1px solid var(--snow);
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    background-color: var(--light_green);
+    border: 1px solid var(--snow);
+}
+
+
+.current-month {
+    background-color: #3498db;
+    color: #fff;
+}
+  
+.expense-day {
+    background-color: var(--asparagus);
+    color: #fff;
+}
+
+#chart  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+}
+  
+.btn-calendar {
+    margin: 2em .6em ;
+    width: 40px;
+    height: 25px;
+    background-color: var(--asparagus);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--snow);
+    transition: .4s;
+}
+.btn-calendar:hover {
+    background-color: var(--black-hover);
+}
+
+/* 
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-calendar: #black;
+    --color-cell: #black;
+    --color-cell-disabled: #85888a;
+}
+
+
+.calendar {
+    padding: 20px 10px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 300px;
+    font-family: sans-serif;
+}
+
+.calendar__header {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.calendar .control {
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.grid__header,
+.grid__body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid__header {
+    color: #7BAE7F;
+    margin-bottom: 20px;
+}
+
+.grid__body {
+    grid-auto-rows: 40px;
+    color: var(--color-cell);
+}
+
+.grid__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid__cell--gd {
+    cursor: pointer;
+}
+
+.grid__cell--selected {
+    color: var(--color-bg-calendar);
+    background-color: rgba(123, 174, 127, 0.5);
+    border-radius: 50%;
+    border: 2px solid #7BAE7F;
+    box-shadow: 0 0 0 2px var(--color-bg-calendar) inset;
+}
+
+.grid__cell--disabled {
+    color: var(--color-cell-disabled);
+    cursor: not-allowed;
+} */
+
+/*<----------------------------- grafico de barras ------------------------------------------------------->*/
+
+/* .board {
+    width: 80%;
+    height: 650px;
+    background-color: white;
+}
+
+.titulo_grafica {
+    margin-top: 5rem;
+    width: 100%;
+    height: 10%;
+}
+
+.titulo_grafica>h3 {
+    padding: 0;
+    margin: 0px;
+    text-align: center;
+    color: #666666;
+}
+
+.sub_board {
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    margin-top: 0px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sep_board {
+    width: 100%;
+    height: 10%;
+}
+
+.cont_board {
+    width: 100%;
+    height: 80%;
+}
+
+.graf_board {
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-top: 0px;
+    background-color: white;
+    border-left: 2px solid #999999;
+    border-bottom: 2px solid #999999;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.barra {
+    width: 10%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.sub_barra {
+    width: 100%;
+    height: 80%;
+    background-color: #7BAE7F;
+}
+
+.tag_g {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: -20px;
+    z-index: 2;
+}
+
+.tag_leyenda {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.tag_board {
+    height: 100%;
+    width: 15%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.sub_tag_board {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.sub_tag_board>div {
+    width: 100%;
+    height: 10%;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.b1 {
+    height: 35%;
+}
+
+.b2 {
+    height: 45%;
+}
+
+.b3 {
+    height: 15%;
+}
+
+.b4 {
+    height: 75%;
+}
+
+.b5 {
+    height: 25%;
+}
+@media screen and (max-width: 660px) {
+    .container {
+        flex-direction: column;
+    }
+} */
+
+
+/* 
+.agregar {
+    display: flex;
+    position: relative;
+    background-color: black;
+    border: none;
+    outline: none;
+
+    justify-content: center;
+
+    z-index: 10;
+}
+.agregar svg {
+    width: 3.75rem;
+    height: auto;
+    fill: var(--footer_bg);
+
+    display: block;
+    margin: auto;
+} */

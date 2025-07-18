@@ -1,0 +1,112 @@
+/* Contenedor general de la tabla */
+.container {
+  padding: 20px;
+}
+
+/* Título */
+.container h1 {
+  color: #506C4D; /* Azul turquesa */
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Tabla principal */
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #e0f7fa; /* Fondo azul turquesa claro */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera y celdas */
+th, td {
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Cabecera */
+th {
+  background-color: #b2ebf2; /* Azul turquesa más claro */
+  color: #004d40;
+  font-weight: 600;
+  border-bottom: 2px solid #4dd0e1;
+}
+
+/* Celdas */
+td {
+  border-bottom: 1px solid #b2dfdb;
+}
+
+/* Hover en filas */
+tr:hover {
+  background-color: #d9ebe6;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Bordes redondeados opcionales */
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Estilo para botones de acción */
+button[mat-button] {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Íconos: lápiz (editar) */
+button[mat-button] .mat-icon {
+  color: #33f321; /* Azul sombra para editar */
+}
+
+button[mat-button]:hover .mat-icon {
+  color: #4caf50; /* Verde al hacer hover */
+}
+
+/* Íconos: tachito (eliminar) */
+button[mat-button].delete .mat-icon {
+  color: #f44336; /* Rojo sombra para eliminar */
+}
+
+button[mat-button].delete:hover .mat-icon {
+  color: #4caf50; /* Verde al hacer hover */
+}
+
+/* Ícono de editar (botón de actualizar) */
+button[mat-button]:hover .mat-icon {
+  color: #81c784; /* Verde pastel */
+  transition: color 0.3s ease;
+}
+
+/* Ícono de eliminar */
+button[mat-button].delete_forever:hover .mat-icon {
+  color: #ef9a9a; /* Rojo pastel */
+  transition: color 0.3s ease;
+}
+
+.edit:hover {
+    color: red; /* Cambia el color del lápiz a rojo */
+}
+
+.delete_forever:hover {
+    color: rgb(0, 255, 34); /* Cambia el color del lápiz a rojo */
+}

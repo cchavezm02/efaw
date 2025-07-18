@@ -1,0 +1,31 @@
+<div class="container-tipotransaccion-listar">
+  <h1>Lista de Tipos de Cuenta</h1>
+
+  <div class="acciones">
+    <button mat-raised-button color="primary" routerLink="/tipocuenta/insertar">
+      Registrar Tipo de Cuenta
+    </button>
+  </div>
+
+  <div class="contenedor-grid">
+    <mat-card class="tipocuenta-card" *ngFor="let t of lista">
+      <mat-card-content>
+        <p><strong>Nombre:</strong> {{ t.nombreTipoCuenta }}</p>
+        <p><strong>Número:</strong> {{ t.numeroTipoCuenta }}</p>
+        <p><strong>Tipo:</strong> {{ t.tipodeCuenta }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="editar(t.idTipoCuenta)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warn" (click)="eliminar(t.idTipoCuenta)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-button (click)="verDetalle(t)">
+          <mat-icon>info</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

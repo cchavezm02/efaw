@@ -1,0 +1,38 @@
+/* Contenedor principal */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* Título */
+div > div:first-child {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Formulario */
+form {
+  width: 100%;
+  max-width: 400px; /* Controla el ancho del formulario */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaciado entre campos */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Campos de entrada */
+mat-form-field {
+  width: 100%;
+}
+
+/* Botones */
+button {
+  width: 100%;
+}

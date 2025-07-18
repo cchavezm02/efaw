@@ -1,0 +1,93 @@
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #f6fff6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.08);
+  border: 1.5px solid #b6e2b6;
+}
+
+.container {
+  padding: 20px;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table,
+th,
+td {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+th {
+  background-color: #e0f2e9;
+  color: #2e7d32;
+  font-weight: 600;
+  border-bottom: 2px solid #b6e2b6;
+}
+
+td {
+  border-bottom: 1px solid #d0e8d0;
+  color: #388e3c;
+}
+
+tr:hover {
+  background-color: #c8e6c9;
+  transition: background-color 0.2s ease-in-out;
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Botón de acción estilo Material */
+button[matButton] {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+button[matButton] mat-icon {
+  color: #43a047 !important;
+}
+
+button[matButton]:hover mat-icon {
+  color: #2e7d32 !important;
+}
+
+/* Estilo para botones de acción */
+button[mat-button] {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+/* Estilo para todos los iconos dentro de la tabla */
+table mat-icon,
+table .mat-icon {
+  color: #43a047 !important;
+  transition: color 0.2s;
+}
+
+table button:hover mat-icon,
+table button:hover .mat-icon {
+  color: #2e7d32 !important;
+}

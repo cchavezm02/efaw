@@ -1,0 +1,12 @@
+<div class="contenedor-grafico">
+  <h2 class="titulo-grafico">Cantidad de Transacciones por Fecha</h2>
+  <div class="chart-container">
+    <canvas baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [type]="barChartType">
+    </canvas>
+  </div>
+</div>

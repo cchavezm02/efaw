@@ -1,0 +1,94 @@
+table {
+    width: 90%;
+    /* O prueba con 80% si prefieres más compacto */
+    margin: 0 auto;
+    /* Centra la tabla horizontalmente */
+    border-collapse: collapse;
+    background-color: #f6fff6;
+    /* Fondo verde claro */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.08);
+    border: 1.5px solid #b6e2b6;
+}
+
+.container {
+    padding: 20px;
+    /* Agrega espacio interno al contenedor */
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+table,
+th,
+td {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+th {
+    background-color: #e0f2e9;
+    /* Verde muy suave */
+    color: #2e7d32;
+    font-weight: 600;
+    border-bottom: 2px solid #b6e2b6;
+}
+
+td {
+    border-bottom: 1px solid #d0e8d0;
+    color: #388e3c;
+}
+
+tr:hover {
+    background-color: #c8e6c9;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+button[matButton] mat-icon {
+    color: #43a047 !important;
+    /* Verde para el icono */
+}
+
+button[matButton]:hover mat-icon {
+    color: #2e7d32 !important;
+    /* Verde más oscuro al hacer hover */
+}
+
+/* Opcional: bordes redondeados solo en la primera y última fila */
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* *** MODIFICACIÓN PARA EL ICONO *** */
+/* Estilos para el botón de editar - quita bordes y cambia color a rojizo */
+button[matButton] {
+  border: none !important; /* Quita todos los bordes del botón */
+  background: transparent !important; /* Fondo transparente */
+  box-shadow: none !important; /* Quita sombras si las hay */
+}
+
+button[matButton] mat-icon {
+  color: #43a047 !important; /* Color rojizo para el icono */
+}
+
+button[matButton]:hover mat-icon {
+  color: #43a047 !important; /* Color rojizo más oscuro al hacer hover */
+}
+/* *** FIN DE MODIFICACIÓN PARA EL ICONO *** */

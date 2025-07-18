@@ -1,0 +1,42 @@
+<div class="container-metodopago">
+  <form [formGroup]="form" (ngSubmit)="actualizarPerfil()">
+    <h1>Actualizar Datos del Usuario</h1>
+
+    <mat-form-field>
+      <mat-label>Nombres</mat-label>
+      <input matInput formControlName="nameUser" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Apellidos</mat-label>
+      <input matInput formControlName="lastnameUser" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput formControlName="emailUser" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdayUser" />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+
+    <div class="btn-container">
+      <button mat-raised-button color="primary" type="submit">Actualizar Datos</button>
+      <button mat-raised-button color="warn" type="button" (click)="eliminarCuenta()">Eliminar Cuenta</button>
+    </div>
+  </form>
+</div>

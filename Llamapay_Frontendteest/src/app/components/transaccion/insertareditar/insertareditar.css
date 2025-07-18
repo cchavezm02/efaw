@@ -1,0 +1,82 @@
+
+/* Contenedor principal del formulario */
+.container-transaccion {
+  display: flex;
+  justify-content: center;               /* Centra horizontalmente */
+  align-items: center;                   /* Centra verticalmente */
+  min-height: 100vh;                     /* Ocupa toda la pantalla */
+  background: linear-gradient(to right, #e3fded, #ffffff); /* Fondo degradado */
+  padding: 20px;
+}
+
+/* Título principal */
+.container-transaccion h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2e7d32;
+  text-align: center;
+}
+
+/* Estilo del formulario */
+form {
+  width: 100%;
+  max-width: 500px;
+  background-color: #f6fff6;
+  border: 1.5px solid #b6e2b6;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.08);
+  padding: 35px 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Campos de entrada */
+mat-form-field {
+  width: 100%;
+}
+
+/* Botonera */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Botón base */
+button[mat-raised-button] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón verde (submit) */
+button[color="primary"] {
+  background-color: #4caf50;
+}
+
+button[color="primary"]:hover {
+  background-color: #388e3c; /* Verde más oscuro */
+}
+
+/* Botón rojo (cancelar) */
+button[color="warn"] {
+  background-color: #5cf436;
+}
+
+button[color="warn"]:hover {
+  background-color: #c9f3a6;
+}
+
+/* Reset del body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

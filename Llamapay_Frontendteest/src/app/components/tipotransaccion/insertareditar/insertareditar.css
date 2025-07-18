@@ -1,0 +1,74 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  padding: 20px;
+}
+
+.form-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+form.form-content {
+  width: 100%;
+  max-width: 500px;
+  background-color: #f6fff6;
+  border: 1.5px solid #b6e2b6;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.08);
+  padding: 35px 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+mat-form-field.full-width {
+  width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+button[mat-raised-button] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón primario (verde) */
+button[color="primary"] {
+  background-color: #4caf50;
+}
+button[color="primary"]:hover {
+  background-color: #388e3c;
+}
+
+/* Botón de cancelar (rojo) */
+button[color="warn"] {
+  background-color: #5cf436;
+}
+button[color="warn"]:hover {
+  background-color: #94d32f;
+}
+
+/* Asegura altura completa */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

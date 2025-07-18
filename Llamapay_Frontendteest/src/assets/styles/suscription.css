@@ -1,0 +1,199 @@
+@import url('./shared/body.colors.css');
+@import url('./shared/navbar.styles.css');
+@import url('./reminders/reminders.form.css');
+
+.main {
+  width: 100%;
+}
+.main-container {
+  margin: 2em 0;
+}
+/* Suscripción */
+.pago-info {
+    padding: 1.2em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pago-info .background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+.pago-info .background-image .blur {
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+}
+  
+.pago-info form {
+    width: 60%;
+    padding: 20px;
+}
+#paymentForm {
+  border-radius: 20px;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.122);
+}
+.pago-info form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+  
+.container form .row .col-form {
+    flex: 1 1 250px;
+}
+  
+.container form .row .col-form .title {
+    padding-bottom: 5px;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+}
+  
+.container form .row .col-form .inputBox {
+    margin: 22px 0;
+}
+  
+.container form .row .col-form .inputBox span {
+    margin-bottom: 10px;
+    display: block;
+}
+  
+.container form .row .col-form .inputBox input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+  
+.container form .row .col-form .inputBox input:focus {
+    border: 1px solid #000;
+}
+  
+.container form .row .col-form .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+  
+.container form .row .col-form .flex .inputBox {
+    width: 85%;
+}
+  
+.container form .row .col-form .flex input {
+    width: 100%;
+}
+.btns-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  
+  .container form .row .col-form .flex .inputBox {
+    margin-top: 5px;
+  }
+  
+  .container form .row .col-form .inputBox img {
+    margin-top: 5px;
+    width: 100%;
+    filter: drop-shadow(0 0 1px #000);
+  }
+  
+  .container .submit-btn {
+    width: 60%;
+    padding: 12px;
+    font-size: 17px;
+    background: #73956F;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.267);
+  }
+  .container .submit-btn:hover {
+    background: #546d51;
+  }
+  .container .cancel-btn {
+    width: 60%;
+    padding: 12px;
+    font-size: 17px;
+    background: #E2E4E4;
+    color: #737373;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .container .cancel-btn:hover {
+    background: #c8c8c8;
+    color: #515151;
+  }
+.btns-form input {
+    margin: 0.5em 0;
+}
+  
+  /**/
+  .popup-pago {
+    width: 25rem;
+    background: white;
+    border-radius: 6px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.122);
+  }
+  
+  .popup-pago.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .popup-pago img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-pago h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+  
+  .popup-pago button {
+    width: 6.3rem;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+@media screen and (max-width: 660px) {
+    .pago-info form {
+        width: 100%;
+    }
+}

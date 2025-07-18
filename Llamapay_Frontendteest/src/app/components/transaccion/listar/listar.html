@@ -1,0 +1,30 @@
+<div class="container-transaccion-listar">
+  <h1>Lista de Transacciones</h1>
+
+  <div class="acciones">
+    <button mat-raised-button color="primary" routerLink="/transaccion/insertar">
+      Registrar Transacción
+    </button>
+  </div>
+
+  <div class="contenedor-grid">
+    <mat-card class="tarjeta" *ngFor="let transaccion of transacciones">
+      <mat-card-content>
+        <p><strong>Fecha:</strong> {{ transaccion.fechaTransaccion | date:'dd/MM/yyyy' }}</p>
+        <p><strong>Monto:</strong> S/. {{ transaccion.montoTransaccion }}</p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-button (click)="verDetalle(transaccion)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-button [routerLink]="['/transaccion/editar', transaccion.idTransaccion]">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button (click)="eliminar(transaccion.idTransaccion)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

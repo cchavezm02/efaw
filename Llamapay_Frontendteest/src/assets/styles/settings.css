@@ -1,0 +1,223 @@
+@import url('./shared/navbar.styles.css');
+@import url('./shared/body.colors.css');
+
+
+/* Main */
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+div.container-1{
+    width: 200px;
+    justify-content: center;
+    display: flex;
+    margin: 1.6rem 1rem;
+}
+
+div.container-2{
+    width: 600px;
+    justify-content: center;
+    margin: 1.6rem 3.5rem;
+}
+
+div.container-3{
+    width: 20%;
+    justify-content: center;
+    margin: 1.6rem 3.5rem;
+}
+
+div.subContainer-1{
+    justify-content: center;
+    margin: 1rem 1rem;
+}
+
+.opc{
+    display: flex;
+    margin: .4rem .4rem;
+}
+
+.select{
+    background-color: var(--green_bg);
+}
+
+.txt:hover{
+    font-weight: 600;
+}
+
+img{
+    margin: .4rem .4rem;
+}
+
+.option ul li{
+    padding: .1rem;
+}
+
+.choose{
+    margin: 1.5rem 0rem;
+}
+
+.left-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+hr {
+    margin-block-start: 1.6rem;
+    margin-block-end: 1rem;
+}
+
+.subTitle, .thema, .size, .language, .title-select ,.btn{
+    font-weight: 500;
+}
+
+.size, .language, .title-select{
+    margin: .4rem 0rem;
+}
+
+.subTitle{
+    margin: 1.3rem 0rem;
+}
+
+.circle-1{
+    display: flex;
+    height: 20px;
+    width: 20px;
+    background-color: var(--dark_green);
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin: .1rem .4rem;
+}
+.circle-2{
+    display: flex;
+    height: 20px;
+    width: 20px;
+    background-color: var(--white);
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin: .1rem .4rem;
+}
+
+.txt{
+    font-size: 1.1rem;
+    color:#000;
+    margin: .7rem .5rem;
+}
+
+#metodo_pago{
+    font-size: 1rem;
+    margin: .2rem 0rem;
+    text-decoration: none;
+}
+
+#max{
+    font-size: 1.5rem;
+}
+
+.txt1{
+    font-size: 1rem;
+    margin: .2rem 0rem;
+    text-decoration: none;
+}
+
+.txt1:hover{
+    font-weight: 600;
+}
+
+.txt1 a{
+    text-decoration: none;
+    color: #000;
+}
+
+.subChoose{
+    display: flex;
+    margin: .3rem .0rem;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+}
+
+.btn {
+    color:var(--white);
+    flex-grow: 1;
+    font-size: 1rem;
+    margin: .4rem;
+    padding: 0.6rem 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--asparagus);
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.btn:hover{
+    background-color: var(--black-hover);
+}
+
+.title-select{
+    color: var(--white);
+}
+
+.selectBox{
+    width:30%;
+    margin: .2rem .5rem;
+    position: relative;
+}
+
+.selected{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+    background-color: var(--asparagus);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .1rem;
+    transition:.2s ease all;
+    padding: .2rem .7rem;
+    position: relative;
+    z-index: 200;
+    border: 2px solid transparent;
+}
+
+
+.selectBox :hover{
+    background-color: var(--black-hover);
+}
+
+@media screen and (max-width: 880px) {
+    div.container-1 {
+        margin: 1rem 0.5rem;
+    }
+    div.container-2 {
+        margin: 1rem 0.8rem;
+    }
+    div.subContainer-1 {
+        margin: .8rem;
+    }
+    div.subContainer-2 {
+        width: 100%;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .selectBox {
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 500px)  {
+    .opc a{
+        font-size: .8rem;
+    }
+    .opc img {
+        width: 18px;
+    }
+}
+

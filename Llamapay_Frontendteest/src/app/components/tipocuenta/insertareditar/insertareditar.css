@@ -1,0 +1,80 @@
+.container-tipocuenta {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  min-height: 100vh;       /* Ocupa todo el alto de la pantalla */
+  background: linear-gradient(to right, #e3f2fd, #ffffff); /* Fondo suave degradado */
+  padding: 20px;           /* Espaciado interior */
+}
+
+/* Estilo del título principal del formulario */
+.container-tipocuenta h1 {
+  font-size: 36px;         /* Tamaño grande de letra */
+  font-weight: 600;        /* Negrita semi */
+  margin-bottom: 25px;     /* Separación con el formulario */
+  color: #506C4D;          /* Verde oscuro */
+  text-align: center;      /* Centrado */
+}
+
+/* Formulario principal: fondo, bordes y sombra */
+form {
+  width: 100%;
+  max-width: 500px;        /* Ancho máximo del formulario */
+  background-color: #f6fff6;
+  border: 1.5px solid #b6e2b6;
+  padding: 35px 25px;      /* Relleno interno (arriba/abajo, izquierda/derecha) */
+  border-radius: 16px;     /* Bordes redondeados */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sombra suave */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;               /* Espacio entre campos */
+}
+
+/* Cada campo de entrada (form-field) ocupa todo el ancho del formulario */
+mat-form-field {
+  width: 100%;
+}
+
+/* Contenedor de los botones: espacio entre ellos */
+.btn-container {
+  display: flex;
+  justify-content: space-between; /* Deja uno a la izquierda y otro a la derecha */
+  gap: 15px;                      /* Espacio entre botones */
+  margin-top: 10px;              /* Separación con los campos */
+}
+
+/* Estilo base de los botones */
+button[mat-raised-button] {
+  flex: 1;                      /* Todos los botones ocupan el mismo ancho */
+  padding: 10px;                /* Espaciado interno del botón */
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;           /* Bordes redondeados */
+  color: #ffffff;               /* Color de texto blanco */
+  transition: background-color 0.3s ease; /* Suaviza cambio de color al pasar el mouse */
+}
+
+/* Estilo para botón principal (verde) */
+button[color="primary"] {
+  background-color: #4caf50;
+}
+
+button[color="primary"]:hover {
+  background-color: #d3fcdf;
+}
+
+/* Estilo para botón de cancelar (rojo) */
+button[color="warn"] {
+  background-color: #5cf436;
+}
+
+button[color="warn"]:hover {
+  background-color: #94d32f;
+}
+
+/* Ajustes generales para el body y html */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

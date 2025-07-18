@@ -164,9 +164,6 @@ export const routes: Routes = [
  {
     path: 'tipotransaccion',
     component: TipoTransaccion,
-    canActivate: [seguridadGuard],
-    canActivateChild: [seguridadGuard],
-    data: { roles: ['CLIENTE'] },
     children: [
       { path: 'listar', component: ListarTipoTransaccionComponent },
       { path: 'insertar', component: InsertarEditarTipoTransaccionComponent },
